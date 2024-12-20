@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="—Pngtree—pile of books 3d icon_7457105.png">
+    <title>تفاصيل الكتاب</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            direction: rtl;
+        }
+
+        .book-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .book-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .book-header img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .book-details {
+            flex: 1;
+        }
+
+        .book-details h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+
+        .book-details .rating {
+            color: #ffa500;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .book-info {
+            margin-top: 20px;
+        }
+
+        .book-info p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 16px;
+            
+        }
+
+        .book-info p span {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .book-actions button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .book-actions .quote {
+            background-color: #52ab98;
+            color: #fff;
+        }
+
+        .book-actions .review {
+            background-color: #d3e0ea;
+            color: #333;
+        }
+        nav {
+            background-color: #d3e0ea;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2b6777;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+<style>
+    /* التنسيق العام */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+    }
+
+    header {
+        background-color: #2b6777;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    header .search-bar {
+        flex: 1;
+        margin: 0 20px;
+        display: flex;
+    }
+
+    header .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+    }
+
+    header .search-bar button {
+        padding: 10px;
+        background-color: #52ab98;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+    }
+
+    /* قائمة الكتب */
+    main {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .book {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: calc(20% - 20px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    .book img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .book .details {
+        padding: 10px;
+    }
+
+    .book h3 {
+        font-size: 16px;
+    }
+
+    /* إخفاء الكتب غير المطابقة */
+    .hidden {
+        display: none;
+    }
+</style>
+     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #2b6777;
+            color: white;
+           
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .book {
+            text-align: center;
+        }
+
+        .book img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+
+        .book .details {
+            padding: 15px ;
+        }
+
+        .book .details h3 {
+            font-size: 22px;
+            margin: 10px 0;
+            color: #2b6777;
+        }
+
+        .book .details p {
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .book .details a {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: #52ab98;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .book .details a:hover {
+            background-color: #2b6777;
+        }
+    </style>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .book-container {
+            background-color: #fdfdfd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 700px;
+            text-align: right;
+        }
+        .book-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .book-title span {
+            color: #00b894;
+            font-weight: normal;
+        }
+        .book-description {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1em;
+            overflow: hidden;
+            max-height: 50px; /* ارتفاع النص المخفي */
+            transition: max-height 0.5s ease;
+        }
+        .book-description.expanded {
+            max-height: 1000px; /* ارتفاع كبير عند التوسيع */
+        }
+        .more-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #00b894;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+        .more-btn:hover {
+            background-color: #019874;
+        }
+    </style>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .book-actions {
+            margin-top: 20px;
+           
+        }
+
+        .share-btn {
+            background-color: #2b6777;
+            color: #fff;
+        }
+
+        .share-btn:hover {
+            background-color: #1f4f5c;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* زر اقتبس */
+        .quote-btn {
+            background-color: #2b6777;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quote-btn:hover {
+            background-color: #1f4f5c;
+        }
+
+        /* الخلفية المعتمة للنافذة */
+        .modal {
+            display: none; /* مخفي افتراضيًا */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* محتوى النافذة */
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            color: #2b6777;
+            margin-bottom: 10px;
+        }
+
+        /* زر الإغلاق */
+        .close-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <header dir="ltr">
+        <div class="logo">مكتبة المعرفة</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="ابحث عن كتاب...">
+            <button onclick="searchBooks()">بحث</button>
+        </div>
+</header>
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="%D8%B9%D9%86_%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9.html">عن الموقع</a>
+    </nav>
+
+    <div class="book-container">
+        <div class="book-header">
+            <img src="rich dad.webp" alt="غلاف الكتاب">
+            <div class="book-details">
+                <h1>الاب الغني الاب الفقير</h1>
+                <div class="rating">★★★★★ (60 تقييمًا)</div>
+                <div class="book-info">
+                    <p><span>المؤلف:</span> روبرت كيوساكي</p>
+                    <p><span>القسم:</span> التنمية البشرية وتطوير الذات</p>
+                    <p><span>اللغة:</span> العربية</p>
+                    <p><span>الصفحات:</span> 244</p>
+                    <p><span>ترتيب الشهرة:</span>81</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="book-actions">
+            <button class="share-btn" id="shareButton">شارك</button>
+            <button class="quote-btn" id="openModal">اقتبس</button>
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <h2>تسجيل الدخول</h2>
+                    <p>مكتبة غير محدودة من الكتب العربية</p>
+                    <input type="email" placeholder="البريد الإلكتروني"><br><br>
+                    <input type="password" placeholder="كلمة المرور"><br><br>
+                    <button class="quote-btn">تسجيل الدخول</button>
+                    <hr>
+                    <button class="close-btn" id="closeModal">إغلاق</button>
+                </div>
+            </div>
+        
+            <button class="review">مراجعة</button>
+        </div>
+        <div class="book-actions">
+            
+        </div>
+    
+    </div>
+
+    <header>
+        <h1>وصف كتاب: الأب الغني والأب الفقير</h1>
+    </header>
+
+   <div class="book-container">
+        <div class="book-title">
+            الأب الغني والأب الفقير <span>(معلومة)</span>
+        </div>
+        <div class="book-description" id="bookDescription">
+            # تلاب الغني والاب الفقير
+            الأب الغني والأب الفقير (معلومة)
+            
+            هو كتاب من تأليف الكاتب الأمريكي روبرت كيوساكي بالاشتراك مع شارون إل.ليتشر. وموضوعه هو التأكيد على أهمية الاستقلال المالي وبناء الثروة عن طريق شرح العديد من الوسائل كالإستثمار وامتلاك الأصول والإستثمار بها والبدء في مشروع تجاري بالإضافة إلى كيفية تنمية الذكاء المالي لتحسين الآداء المالي والتجاري. كتب روبرت الكتاب على هيئة حكايات رمزية قائمة على أحداث حدثت بالفعل في حياته منذ الطفولة. حقق الكتاب انتشاراً كبيراً على المستوى العالمي وترجم لمعظم لغات العالم ومنها العربية.
+            
+            ملخص الكتاب
+            يحكي الكاتب قصة طفولته، الموزعة بين نصائح أبيه الأستاذ الجامعي والذي يرمز له في الكتاب بلقب الأب الفقير، وبين نصائح والد صديقه مايك، رجل الأعمال العصامي والذي يرمز له في الكتاب بلقب الأب الغني. يسرد الكتاب طفولة الكاتب وهو يتعلم كيف يحصل على المال ويكتسبه، مع مقارنة دائمه ما بين وضعي والده الأكاديمي الجامعي، ووالد صديقه العملي التجاري.
+            
+            ومن أهم مواضيعه:
+            
+            توضيح ما هو الفرق بين الأصول والأعباء.
+            ما يعلّمه الأثرياء ولا يعلّمه الفقراء وأفراد الطبقة الوسطى لأبنائهم عن المال.
+            نفيّ المعتقد السائد بأن منزلك يعد من الأصول، ولكنه من الأعباء.
+            الأهمية الكبيرة للذكاء الاقتصادي ومساوئ الجهل الاقتصادي.
+            الدور الكبير الذي تلعبه المشاريع التجارية القوية والمهارات الاقتصادية والممارسة والخبرة في النجاح الاقتصادي.
+            أهمية مهارات الإدارة والإستثمار وضرورتهم لتحقيق النجاح والتميز وسط المجتمع الرأسمالي.
+            أهمية الإستثمار وإدارة الأعمال في التحكم في مستقبلك الاقتصادي.
+            وأعتمد كيوساكي في تأليف كتابه على رؤية أستاذه السابق د/بوكمينستر فولر عن الثروة، وهي أن الثروة يتم حسابها بعدد الأيام التي سيكفيك فيها العائد الذي يأتيك من الأصول التي تمتلكها وأن الاستقلال المالي يتحقق عندما يتخطى هذا العائد الشهري نفقاتك الشهرية أي يكفيها ويزيد.
+            
+            المدح والدعم الذي لاقاه الكتاب
+            باع الكتاب أكثر من 32 مليون نسخة وتلقى الكثير من ردود الأفعال الإيجابية. فقد تحدثت الإعلامية الشهيرة أوبرا وينفري عن الكتاب في برنامجها. وأيضا من داعمي الكتاب من المشاهير الممثل الشهير ويل سميث الذي قال أنه عن طريق الكتاب أستطاع تعليم ابنه عن المسئولية المالية. وأيضا مدح البليونير الأمريكي ورئيس الولايات المتحدة الأمريكية دونالد ترامب الكتاب موازنا بينه وبين كتابه فن عقد الصفقات الذي كان مصدر إلهام لكيوساكي. ثم تعاون ترامب مع كيوساكي في عام 2006 تعاون أدبي وأصدرا معا كتاب أطلقا عليه "لماذا نريدك ثرياً، رجلان ورسالة واحدة " وأصدرا أيضا كتاباً آخر أسمياه "اللمسة السحرية: لماذا يصبح بعض رواد الأعمال أغنياء ولماذ الا يفعل أغلبهم" في عام 2011. وصف رائد الأعمال والمستثمر الشهير في مجال الأزياء دايموند جون الكتاب بأنه واحد من أكثر الكتب المفضلة لديه. قام مغني الراب الشهير بيغ كيه ار أي تي Big K.R.I.T بغناء أغنية أسماها "الأب الغني والأب الفقير" ولكن لا يوجد لها أي علاقة بالكتاب.
+            
+            النقد الذي وجه إليه
+            يقول الناقد جون تي ريد عن الكتاب "كتاب الأب الغني والأب الفقير يحتوي على العديد من النصائح الخاطئة والسيئة والخطيرة. والتي قد تكون منافية للأخلاق" ويقول أيضاً "أن الأب الغني والأب الفقير هو أسخف كتاب عن النصائح المالية رأيته في حياتي، فهو يحتوي على العديد من الأخطاء والأحداث الغير مستحبة التي من المفترض انها حدثت. ومن ناحيته قام كيوساكي بالرد على بعض كلام ريد.
+            
+            المصدر: wikipedia.org
+        </div>
+        <div class="more-btn" id="toggleButton">قراءة المزيد</div>
+    </div>
+    
+
+    <script>
+        const description = document.getElementById("bookDescription");
+        const toggleButton = document.getElementById("toggleButton");
+
+        toggleButton.addEventListener("click", () => {
+            // تبديل الكلاس لتوسيع النص
+            description.classList.toggle("expanded");
+            // تبديل النص في الزر
+            if (description.classList.contains("expanded")) {
+                toggleButton.textContent = "عرض أقل";
+            } else {
+                toggleButton.textContent = "قراءة المزيد";
+            }
+        });
+    </script>
+    <script>
+        function searchBooks() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const books = document.querySelectorAll('.book');
+
+            books.forEach(book => {
+                const title = book.querySelector("h3").innerText.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    book.classList.remove('hidden');
+                } else {
+                    book.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+<script>
+    const shareButton = document.getElementById('shareButton');
+
+    // تحقق مما إذا كان المتصفح يدعم Web Share API
+    shareButton.addEventListener('click', () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'الأب الغني والأب الفقير',
+                text: 'أنصحك بقراءة هذا الكتاب الرائع عن الذكاء المالي!',
+                url: window.location.href // مشاركة رابط الصفحة الحالية
+            })
+            .then(() => console.log('تمت المشاركة بنجاح!'))
+            .catch((error) => console.error('فشل في المشاركة:', error));
+        } else {
+            alert('ميزة المشاركة غير مدعومة في متصفحك.');
+        }
+    });
+</script>
+<script>
+    const modal = document.getElementById('modal');
+    const openModal = document.getElementById('openModal');
+    const closeModal = document.getElementById('closeModal');
+
+    // عند الضغط على زر "اقتبس"
+    openModal.addEventListener('click', () => {
+        modal.style.display = 'flex'; // إظهار النافذة
+    });
+
+    // عند الضغط على زر "إغلاق"
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none'; // إخفاء النافذة
+    });
+
+    // عند الضغط خارج النافذة
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none'; // إخفاء النافذة
+        }
+    });
+</script>
+</body>
+</html>
+
+<!--mmmmmmmmmmmmmmmmm-->
+
+    
+
+
+
+
+

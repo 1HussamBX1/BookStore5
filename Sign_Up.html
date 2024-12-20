@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب</title>
+    <link rel="icon" type="image/x-icon" href="—Pngtree—pile of books 3d icon_7457105.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #e0f2f1;
+            direction: rtl;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #00897b;
+            font-size: 24px;
+        }
+
+        .container p {
+            text-align: center;
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .captcha {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .captcha img {
+            width: 60%;
+            height: 40px;
+            object-fit: cover;
+            background-color: #ccc;
+        }
+
+        .show-password {
+            font-size: 12px;
+            cursor: pointer;
+            color: #00897b;
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            background-color: #00897b;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #00796b;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>إنشاء حساب</h1>
+        <h3><b><center>مكتبة المعرفة</center></b></h3>
+        <p>مكتبة غير محدودة من الكتب العربية</p>
+
+        <label for="name">الاسم</label>
+        <input type="text" id="name" placeholder="أدخل اسمك">
+
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني">
+
+        <label for="phone">الهاتف</label>
+        <input type="tel" id="phone" placeholder="رقم الهاتف">
+
+        <label>تاريخ الميلاد</label>
+        <div style="display: flex; gap: 10px;">
+            <select>
+                <option>يوم الميلاد</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+                
+            </select>
+            <select>
+                <option>شهر الميلاد</option>
+                <option>يناير</option>
+                <option>فبراير</option>
+                <option>مارس</option>
+                <option>إبريل</option>
+                <option>مايو</option>
+                <option>يوليو</option>
+                <option>يونيو</option>
+                <option>اغسطس</option>
+                <option>سبتمر</option>
+                <option>اكتوبر</option>
+                <option>نوفمبر</option>
+                <option>ديسمبر</option>
+                
+            </select>
+            <select>
+                <option>سنة الميلاد</option>
+                <option>2000</option>
+                <option>2001</option>
+                <option>2002</option>
+                <option>2003</option>
+                <option>2004</option>
+                <option>2005</option>
+                <option>2006</option>
+                <option>2007</option>
+                <option>2008</option>
+                <option>2009</option>
+                <option>2010</option>
+                <option>2011</option>
+                <option>2012</option>
+                <option>2013</option>
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                
+            </select>
+        </div>
+
+        <label for="gender">النوع</label>
+        <select id="gender">
+            <option>اختر النوع</option>
+            <option>ذكر</option>
+            <option>أنثى</option>
+            <option>اخرى</option>
+
+        </select>
+
+        <label for="password">كلمة المرور</label>
+        <input type="password" id="password" placeholder="••••••">
+                
+       <p class="footer-text">بإنشائك حسابًا، فأنت توافق على سياسة البيانات و سياسة الخصوصية. <input type="checkbox" dir="rtl"></p>
+        <button>إنشاء حساب</button>
+      
+    </div>
+</body>
+</html>

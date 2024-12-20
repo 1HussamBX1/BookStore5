@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة المعرفة</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="WEP/Image">
+</head>
+<body>
+    <style>
+        /* التنسيق العام */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #2b6777;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            display: flex;
+        }
+
+        header .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        header .search-bar button {
+            padding: 10px;
+            background-color: #52ab98;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        header .links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav {
+            background-color: #d3e0ea;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2b6777;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .book {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: calc(20% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .book .details {
+            padding: 15px;
+        }
+
+        .book .details h3 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .book .details p {
+            color: #555;
+            font-size: 14px;
+            margin: 0 0 10px;
+        }
+
+        .book .details a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2b6777;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .book .details a:hover {
+            background-color: #52ab98;
+            transform: scale(1.1);
+        }
+
+        /* تحسين التجاوب */
+        @media (max-width: 1200px) {
+            .book {
+                width: calc(33.33% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            .book {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book {
+                width: 100%;
+            }
+
+            header .search-bar input {
+                padding: 8px;
+            }
+
+            header .search-bar button {
+                padding: 8px;
+            }
+
+            .book .details h3 {
+                font-size: 14px;
+            }
+
+            .book .details p {
+                font-size: 12px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <header>
+        <div class="logo">مكتبة المعرفة</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="ابحث عن كتاب...">
+            <button onclick="searchBooks()">بحث</button>
+        </div>
+        <div class="links">
+            <a href="Login_page.html" target="_self">تسجيل الدخول</a>
+            <a href="Sign_Up.html" target="_self">إنشاء حساب</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html#">الرئيسية</a>
+        <a href="عن_الموقع.html">عن الموقع</a>
+    </nav>
+
+    <main>
+        <div class="book">
+            <img src="77777.webp" alt="كتاب 1">
+            <div class="details">
+                <h3>لماذا ننام</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="Why_we_Sleep.html" target="_self">قراءة المزيد</a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="العادات_الذرية.webp" alt="كتاب 2">
+            <div class="details">
+                <h3>العادات الذرية</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="العادات_الذرية.html">قراءة المزيد</a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="الباطن.jpg" alt="كتاب 3">
+            <div class="details">
+                <h3>قوة عقلك الباطن</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="الباطن1.html">قراءة المزيد</a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="rich dad.webp" alt="كتاب 4">
+            <div class="details">
+                <h3>الأب الغني الأب الفقير</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="rich.html">قراءة المزيد</a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="mo.webp" alt="كتاب 5">
+            <div class="details">
+                <h3>محاط بالحمقى</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="محاط بالحمقى.html">قراءة المزيد</a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="48.jpg" alt="كتاب 6">
+            <div class="details">
+                <h3>48 قانون للقوة</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="48power.html">قراءة المزيد</a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="d706669aa916cd88116f970dde3995b2.jpg.webp" alt="كتاب 7">
+            <div class="details">
+                <h3>The Psychology of Money</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="mony.html">قراءة المزيد</a>
+            </div>
+        </div>
+
+        <div class="book">
+            <img src="رحيل.webp" alt="كتاب 8">
+            <div class="details">
+                <h3>السماح بالرحيل</h3>
+                <p>وصف مختصر للكتاب</p>
+                <a href="رحيل.html">قراءة المزيد</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function searchBooks() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const books = document.querySelectorAll('.book');
+            let found = false;
+
+            books.forEach(book => {
+                const title = book.querySelector("h3").innerText.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    book.classList.remove('hidden');
+                    found = true;
+                } else {
+                    book.classList.add('hidden');
+                }
+            });
+
+            if (!found) {
+                alert("لا توجد نتائج مطابقة لبحثك.");
+            }
+        }
+    </script>
+</body>
+</html>
